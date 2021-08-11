@@ -4,6 +4,7 @@ const cors = require("cors");
 const { initializeDBConnection } = require("./db/db.connect");
 const { addQuizzesToDatabase } = require("./models/quiz.model");
 const quizRouter = require("./routes/quiz.router");
+const userRouter = require("./routes/user.router");
 
 const app = express();
 app.use(bodyParser.json());
@@ -13,6 +14,7 @@ initializeDBConnection();
 //addQuizzesToDatabase();
 
 app.use("/quiz", quizRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello Express app!");
