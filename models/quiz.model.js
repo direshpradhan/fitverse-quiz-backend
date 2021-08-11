@@ -4,7 +4,7 @@ const quizData = require("./quizData");
 
 const OptionSchema = new Schema({
   text: String,
-  isRight: String,
+  isRight: Boolean,
 });
 
 const QuestionSchema = new Schema({
