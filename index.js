@@ -22,6 +22,23 @@ app.use("/user", userRouter);
 app.use(authenticateToken);
 app.use("/quiz", quizRouter);
 
+// 404 Route Handler
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "The route you're looking for is not available.",
+  });
+});
+
+// Error Handler
+app.use((err, req, res, next) => {
+  res.status(500).json({
+    success: false,
+    message: "Server is having some issues. Try again after sometime",
+  });
+  next();
+});
+
 app.listen(3000, () => {
   console.log("server started");
 });
