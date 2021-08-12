@@ -19,7 +19,7 @@ const QuizSchema = new Schema(
     playTime: String,
     totalPoints: Number,
     totalQuestions: Number,
-    descriptiom: Number,
+    description: String,
     imageUrl: String,
     questions: [QuestionSchema],
   },
